@@ -19,7 +19,6 @@ for p=1:d+1
 for i=1:lenx
     for j=1:leny
         new_x = [Xgrid(i,j); Ygrid(i,j)];
-%         kernel = X'*new_x; % N*1  1阶多项式核
         kernel = (X'*new_x).^d; % d阶多项式核
         PC(j,i) = E(:,p)'*kernel;
     end
